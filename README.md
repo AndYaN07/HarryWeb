@@ -41,13 +41,13 @@ Este proyecto de práctica se enmarca dentro de una serie de ideas de desarrollo
 
 **Anderson Guanche**
 
-* [GitHub](https://github.com/AndYaN07/AndYaN07) (Ajusta este enlace si es necesario)
-* [LinkedIn](https://www.linkedin.com/in/anderson-guanche-ramos) (Ajusta este enlace si es necesario)
+* [GitHub](https://github.com/AndYaN07/AndYaN07)
+* [LinkedIn](https://www.linkedin.com/in/anderson-guanche-ramos)
 
 ---
 
 ## 📜 Licencia
 
-Este proyecto se distribuye bajo la licencia **MIT**. (O la licencia que decidas usar)
+Este proyecto se distribuye bajo la licencia **MIT**.
 
 **Nota:** Este proyecto es un homenaje de fans y no está afiliado, asociado, autorizado, respaldado ni conectado de ninguna manera oficialmente con J.K. Rowling, Warner Bros. Entertainment Inc., o cualquiera de sus subsidiarias o afiliadas.
