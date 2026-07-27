@@ -1,0 +1,22 @@
+# Archivos de Claude AI
+.claude/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+
+# Dependencias (por si se añade npm en el futuro)
+node_modules/
+
+# Variables de entorno
+.env
+.env.local
+
+# Builds
+dist/
+build/
