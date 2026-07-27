@@ -6,6 +6,33 @@
   --color-silver: #c0c0c0;
 }
 
+/* ── Modo claro (pergamino) 
+   Sobreescribe las variables de :root. Todo lo que usa var() se adapta solo. */
+body.tema-claro {
+  --color-bg: #f5f0e8;
+  --color-bg-secondary: #ede7d8;
+  --color-gold: #7a5c10;
+  --color-text: #2c2418;
+  --color-silver: #5a5040;
+}
+
+/* Ajustes puntuales para el modo claro */
+body.tema-claro header {
+  background-image: url("./assets/img/nav_1.png");
+}
+
+body.tema-claro .personaje-card-api {
+  border-color: #c8b89a;
+}
+
+body.tema-claro .modal-fila {
+  border-bottom-color: #d5c8b0;
+}
+
+body.tema-claro #modal-datos {
+  border-top-color: #d5c8b0;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -160,6 +187,28 @@ header {
 }
 
 .nav-container ul li a:hover {
+  color: var(--color-gold);
+}
+
+/* Botón de toggle en el nav (tema claro/oscuro) */
+.nav-toggle {
+  background: none;
+  border: 1px solid var(--color-silver);
+  color: var(--color-silver);
+  font-family: "IM Fell English SC", serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  padding: 0.15rem 0.6rem;
+  border-radius: 4px;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.nav-toggle:hover {
+  border-color: var(--color-gold);
   color: var(--color-gold);
 }
 

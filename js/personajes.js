@@ -3,7 +3,7 @@
 // Primera página — el bucle de carga continúa con links.next hasta el final
 const API_PERSONAJES = "https://api.potterdb.com/v1/characters?page[size]=100";
 
-// Array con los personajes cargados de la API (filtrados de los vacíos)
+// Array con los personajes cargados de la API (ya filtrados)
 let personajesData = [];
 
 // Estado de los filtros activos
@@ -19,7 +19,7 @@ const COLORES_CASA = {
 };
 
 // ── TRADUCCIONES
-// Solo se traducen campos descriptivos.
+// Los nombres propios son iguales en español. Solo se traducen campos descriptivos.
 
 const TRADUCCIONES = {
   genero: {
@@ -76,7 +76,7 @@ const TRADUCCIONES = {
   },
 };
 
-// Devuelve la traducción o el valor original si no está en el mapa
+// Devuelve la traducción al español o el valor original si no está en el mapa
 function traducir(campo, valor) {
   if (!valor) return null;
   return TRADUCCIONES[campo]?.[valor] || valor;
@@ -92,7 +92,7 @@ async function cargarPersonajes() {
     let url = API_PERSONAJES;
     let todos = [];
 
-    // La API pagina los resultados por lo que hay que recorrer todas las páginas hasta que no haya "next"
+    // La API pagina los resultados — recorrer todas las páginas hasta que no haya "next"
     while (url) {
       const respuesta = await fetch(url);
       if (!respuesta.ok) throw new Error("Error en la API");
@@ -100,7 +100,7 @@ async function cargarPersonajes() {
       todos = todos.concat(datos.data || []);
       url = datos.links?.next || null;
 
-      grid.innerHTML = `<p class="personajes-estado">Cargando... (${todos.length} personajes)</p>`;
+      grid.innerHTML = `<p class="personajes-estado">Cargando... (${todos.length})</p>`;
     }
 
     // Descartar personajes sin imagen NI casa (entradas vacías sin información útil)
@@ -127,7 +127,6 @@ function mostrarEstadoInicial() {
 
 // Aplica casa + búsqueda de texto y renderiza el resultado
 function aplicarFiltros() {
-  // Si no hay ningún filtro activo, volver al estado inicial
   if (filtroCasa === "todos" && !textoBusqueda) {
     mostrarEstadoInicial();
     return;
@@ -236,11 +235,9 @@ function abrirModal(id) {
 
   document.getElementById("modal-datos").innerHTML =
     filasHTML ||
-    '<div class="modal-fila"><dt>Datos</dt><dd>Sin información adicional disponible.</dd></div>';
+    '<div class="modal-fila"><dt>—</dt><dd>Sin información adicional disponible.</dd></div>';
 
-  // Mostrar el modal y poner el foco en el botón de cerrar
-  const overlay = document.getElementById("modal-overlay");
-  overlay.removeAttribute("hidden");
+  document.getElementById("modal-overlay").removeAttribute("hidden");
   document.getElementById("modal-cerrar").focus();
 }
 
