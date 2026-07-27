@@ -40,6 +40,7 @@
         <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#miVision">Mi vision magica</a></li>
+          <li><a href="#hechizos">Hechizos</a></li>
           <li>
             <a href="#casas">Casas</a>
             <ul>
@@ -90,6 +91,22 @@
           <strong>nunca rendirme</strong> y comprender que cada día representa
           una nueva oportunidad para ser mejor.
         </p>
+      </section>
+      <section id="hechizos">
+        <h2>Hechizos del mundo mágico</h2>
+        <div class="hechizos-buscador-wrap">
+          <label for="buscador-hechizos" class="hechizos-label">
+            Busca tu hechizo favorito:
+          </label>
+          <input
+            type="search"
+            id="buscador-hechizos"
+            placeholder="Expelliarmus, Lumos, Accio..."
+            autocomplete="off"
+          />
+          <span id="hechizos-contador" class="hechizos-contador"></span>
+        </div>
+        <div id="hechizos-grid"></div>
       </section>
       <section class="casas" id="casas">
         <h2>Las cuatro grandes de Hogwarts</h2>
@@ -377,6 +394,7 @@
           <h4>Enlaces rápidos</h4>
           <ul>
             <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#hechizos">Hechizos</a></li>
             <li><a href="#casas">Casas</a></li>
             <li><a href="#personajes">Personajes</a></li>
             <li><a href="#quiz">Quiz</a></li>
@@ -409,5 +427,6 @@
       </div>
     </footer>
     <script src="./js/quiz.js"></script>
+    <script src="./js/hechizos.js"></script>
   </body>
 </html>

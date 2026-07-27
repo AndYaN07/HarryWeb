@@ -419,6 +419,126 @@ footer {
   color: var(--color-bg);
 }
 
+/* ── Hechizos  */
+
+#hechizos {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* Envuelve la etiqueta, el input y el contador */
+.hechizos-buscador-wrap {
+  max-width: 520px;
+  margin: 0 auto 1.5rem auto;
+}
+
+/* Etiqueta visible encima del input */
+.hechizos-label {
+  display: block;
+  font-family: "IM Fell English SC", serif;
+  color: var(--color-silver);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.6rem;
+}
+
+/* Input de búsqueda */
+#buscador-hechizos {
+  display: block;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+  border: 1px solid var(--color-gold);
+  border-radius: 5px;
+  font-family: "EB Garamond", serif;
+  font-size: 1.1rem;
+}
+
+#buscador-hechizos::placeholder {
+  color: var(--color-silver);
+  opacity: 0.7;
+}
+
+#buscador-hechizos:focus {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Contador de resultados debajo del input */
+.hechizos-contador {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-gold);
+  letter-spacing: 1px;
+  min-height: 1.2rem;
+}
+
+/* Grid de tarjetas de hechizos */
+#hechizos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Cada tarjeta de hechizo */
+.hechizo-card {
+  flex: 1 1 200px;
+  max-width: 260px;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid #3a3630;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.hechizo-card h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Incantación destacada en dorado */
+.hechizo-incantacion {
+  font-family: "IM Fell English SC", serif;
+  color: var(--color-gold);
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Categoría traducida al castellano */
+.hechizo-categoria {
+  font-size: 0.82rem;
+  color: var(--color-silver);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+/* Efecto del hechizo */
+.hechizo-efecto {
+  font-size: 0.93rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+/* Mensajes de estado: inicial, sin resultados, error */
+.hechizos-estado {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-silver);
+  width: 100%;
+  padding: 2rem 0;
+  font-style: italic;
+}
+
+.hechizos-error {
+  color: #b83a3a;
+  font-style: normal;
+}
+
 /* Responsive mobile */
 @media (max-width: 768px) {
   h1 {
