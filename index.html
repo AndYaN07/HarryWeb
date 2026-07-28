@@ -131,13 +131,7 @@
         <h2>Las cuatro grandes de Hogwarts</h2>
         <div class="casas-container">
           <article id="gryffindor">
-            <img
-              src="./assets/img/gryffindor.png"
-              alt="escudo de Gryffindor"
-              width="150"
-              height="150"
-              loading="lazy"
-            />
+            <div class="casa-escudo escudo-gryffindor" aria-label="Escudo de Gryffindor">G</div>
             <h3>Gryffindor</h3>
             <p>
               <strong>Gryffindor</strong> es la casa del coraje y la osadía.
@@ -156,15 +150,10 @@
                 fracaso.</strong
               >
             </p>
+            <button class="btn-wiki-casa" data-casa="gryffindor">Leer más</button>
           </article>
           <article id="slytherin">
-            <img
-              src="./assets/img/slytherin.png"
-              alt="escudo de Slytherin"
-              width="150"
-              height="150"
-              loading="lazy"
-            />
+            <div class="casa-escudo escudo-slytherin" aria-label="Escudo de Slytherin">S</div>
             <h3>Slytherin</h3>
             <p>
               <strong>Slytherin</strong> es la casa de la ambición y la astucia.
@@ -184,15 +173,10 @@
                 que los obstáculos te detengan.</strong
               >
             </p>
+            <button class="btn-wiki-casa" data-casa="slytherin">Leer más</button>
           </article>
           <article id="ravenclaw">
-            <img
-              src="./assets/img/ravenclaw.png"
-              alt="escudo de Ravenclaw"
-              width="150"
-              height="150"
-              loading="lazy"
-            />
+            <div class="casa-escudo escudo-ravenclaw" aria-label="Escudo de Ravenclaw">R</div>
             <h3>Ravenclaw</h3>
             <p>
               <strong>Ravenclaw</strong> es la casa de la sabiduría y la
@@ -211,15 +195,10 @@
                 ciencia.</strong
               >
             </p>
+            <button class="btn-wiki-casa" data-casa="ravenclaw">Leer más</button>
           </article>
           <article id="hufflepuff">
-            <img
-              src="./assets/img/hufflepuff.png"
-              alt="escudo de Hufflepuff"
-              width="150"
-              height="150"
-              loading="lazy"
-            />
+            <div class="casa-escudo escudo-hufflepuff" aria-label="Escudo de Hufflepuff">H</div>
             <h3>Hufflepuff</h3>
             <p>
               <strong>Hufflepuff</strong> es la casa de la lealtad y el esfuerzo
@@ -239,6 +218,7 @@
                 y crecer sin prisas pero con consistencia</strong
               >
             </p>
+            <button class="btn-wiki-casa" data-casa="hufflepuff">Leer más</button>
           </article>
         </div>
       </section>
@@ -586,6 +566,14 @@
         </p>
       </div>
     </footer>
+    <!-- Modal de Wikipedia para casas -->
+    <div id="modal-wiki" role="dialog" aria-modal="true" aria-labelledby="wiki-titulo" hidden>
+      <div id="modal-wiki-contenido">
+        <button id="modal-wiki-cerrar" aria-label="Cerrar modal">✕</button>
+        <div id="wiki-cuerpo"></div>
+      </div>
+    </div>
+
     <!-- Modal de detalle de personaje -->
     <div
       id="modal-overlay"
@@ -611,6 +599,8 @@
     <script src="./js/nav.js"></script>
     <script src="./js/scroll-activo.js"></script>
     <script src="./js/volver-arriba.js"></script>
+    <script src="./js/casas-wiki.js"></script>
+    <script src="./js/personajes-img.js"></script>
     <script src="./js/quiz.js"></script>
     <script src="./js/hechizos.js"></script>
     <script src="./js/personajes.js"></script>

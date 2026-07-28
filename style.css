@@ -285,11 +285,45 @@ section + section {
   text-align: center;
 }
 
-#casas article img {
-  width: 150px;
-  display: block;
+.casa-escudo {
+  width: 158px;
+  height: 158px;
   margin: 0 auto 1rem auto;
-  border-radius: 3%;
+  border-radius: 14px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cinzel Decorative", serif;
+  font-size: 5rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  user-select: none;
+}
+
+.escudo-gryffindor {
+  background: linear-gradient(145deg, #5a0000, #b8860b);
+  border-color: #d4a017;
+  box-shadow: 0 0 18px rgba(180, 130, 10, 0.35);
+}
+
+.escudo-slytherin {
+  background: linear-gradient(145deg, #0d2e18, #3a5a3a);
+  border-color: #8a9e8a;
+  box-shadow: 0 0 18px rgba(80, 130, 80, 0.3);
+}
+
+.escudo-ravenclaw {
+  background: linear-gradient(145deg, #0a1230, #3a5080);
+  border-color: #8a6a30;
+  box-shadow: 0 0 18px rgba(100, 130, 180, 0.3);
+}
+
+.escudo-hufflepuff {
+  background: linear-gradient(145deg, #2a2010, #c8a000);
+  border-color: #d4a800;
+  box-shadow: 0 0 18px rgba(200, 160, 0, 0.35);
 }
 
 /* Personajes */
@@ -315,9 +349,14 @@ section + section {
 
 #personajes article img {
   width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: top center;
   display: block;
   margin: 0 auto 1rem auto;
-  border-radius: 3%;
+  border-radius: 50%;
+  border: 2px solid var(--color-gold);
+  box-shadow: 0 0 16px rgba(197, 162, 0, 0.25);
 }
 
 /* Textos internos de las tarjetas */
@@ -979,6 +1018,124 @@ footer {
   color: var(--color-text);
   font-size: 0.95rem;
   margin: 0;
+}
+
+/* Botón "Leer más" en las casas */
+.btn-wiki-casa {
+  display: inline-block;
+  margin-top: 1rem;
+  background: transparent;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  padding: 0.4rem 1.1rem;
+  font-family: "IM Fell English SC", serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-wiki-casa:hover {
+  background-color: var(--color-gold);
+  color: var(--color-bg);
+}
+
+/* Modal Wikipedia */
+#modal-wiki {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+#modal-wiki[hidden] {
+  display: none;
+}
+
+#modal-wiki-contenido {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-gold);
+  border-radius: 10px;
+  padding: 2rem 1.5rem 1.5rem;
+  max-width: 520px;
+  width: 100%;
+  position: relative;
+  animation: modal-entrada 0.2s ease-out;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+#modal-wiki-cerrar {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  background: none;
+  border: 1px solid var(--color-silver);
+  color: var(--color-silver);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+#modal-wiki-cerrar:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+#wiki-cuerpo h3 {
+  font-family: "Cinzel Decorative", serif;
+  color: var(--color-gold);
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#wiki-cuerpo img {
+  display: block;
+  max-width: 160px;
+  margin: 0 auto 1rem auto;
+  border-radius: 6px;
+  border: 1px solid var(--color-gold);
+}
+
+#wiki-cuerpo p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  text-align: justify;
+  margin-bottom: 1.2rem;
+}
+
+.wiki-enlace {
+  display: block;
+  text-align: center;
+  font-family: "IM Fell English SC", serif;
+  font-size: 0.95rem;
+  color: var(--color-gold);
+  margin-top: 0.5rem;
+}
+
+.wiki-cargando {
+  text-align: center;
+  color: var(--color-silver);
+  font-style: italic;
+  padding: 2rem 0;
+}
+
+.wiki-error {
+  text-align: center;
+  color: #b83a3a;
+  padding: 2rem 0;
 }
 
 /* Botón volver arriba */
