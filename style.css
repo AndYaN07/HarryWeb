@@ -184,10 +184,12 @@ header {
   position: relative;
 }
 
-.nav-container ul li:hover > ul,
-.nav-container ul li:focus-within > ul {
-  display: block;
-  background-color: var(--color-bg-secondary);
+@media (min-width: 769px) {
+  .nav-container ul li:hover > ul,
+  .nav-container ul li:focus-within > ul {
+    display: block;
+    background-color: var(--color-bg-secondary);
+  }
 }
 
 .nav-container ul li a:hover {
@@ -215,6 +217,16 @@ header {
 .nav-toggle:hover {
   border-color: var(--color-gold);
   color: var(--color-gold);
+}
+
+/* Botón hamburguesa — solo visible en móvil */
+.nav-hamburguesa {
+  display: none;
+}
+
+/* Botón de expansión de submenú — solo visible en móvil */
+.nav-submenu-toggle {
+  display: none;
 }
 
 /* Maquetacion del Main */
@@ -982,15 +994,83 @@ footer {
     padding-bottom: 10px;
   }
 
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .nav-hamburguesa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid var(--color-silver);
+    color: var(--color-silver);
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0;
+    cursor: pointer;
+    margin: 0.3rem 0.5rem 0;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .nav-hamburguesa:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+
   .nav-container ul {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-container.nav-abierto > ul {
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.3rem;
     padding: 0.5rem 1rem;
+    animation: nav-fade-in 0.2s ease;
   }
 
-  .nav-container ul li ul {
+  @keyframes nav-fade-in {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* li como fila para alinear enlace + botón ▾ */
+  .nav-container > ul > li {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+
+  .nav-submenu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--color-silver);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0 0.2rem;
+    transition: color 0.2s, transform 0.2s;
+  }
+
+  .nav-submenu-toggle[aria-expanded="true"] {
+    transform: rotate(180deg);
+    color: var(--color-gold);
+  }
+
+  /* Submenús ocultos por defecto en móvil */
+  .nav-container ul li ul {
+    display: none;
+    flex-basis: 100%;
     position: static;
     background: transparent;
     flex-direction: column;
@@ -998,6 +1078,13 @@ footer {
     padding-left: 1rem;
     border-left: 1px solid rgba(197, 162, 0, 0.35);
     margin-top: 0.2rem;
+  }
+
+  /* Visible solo cuando el li tiene la clase .submenu-abierto */
+  .nav-container ul li.submenu-abierto > ul {
+    display: flex;
+    flex-direction: column;
+    animation: nav-fade-in 0.2s ease;
   }
 
   .nav-container ul li ul li a {

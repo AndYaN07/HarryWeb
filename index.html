@@ -49,12 +49,14 @@
         encuentran
       </h1>
       <nav class="nav-container" aria-label="Navegación principal">
-        <ul>
+        <button id="nav-hamburguesa" class="nav-hamburguesa" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu"></button>
+        <ul id="nav-menu">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#miVision">Mi vision magica</a></li>
           <li><a href="#hechizos">Hechizos</a></li>
           <li>
             <a href="#casas">Casas</a>
+            <button class="nav-submenu-toggle" aria-expanded="false" aria-label="Expandir Casas">▾</button>
             <ul>
               <li><a href="#gryffindor">Gryffindor</a></li>
               <li><a href="#slytherin">Slytherin</a></li>
@@ -64,6 +66,7 @@
           </li>
           <li>
             <a href="#personajes">Personajes</a>
+            <button class="nav-submenu-toggle" aria-expanded="false" aria-label="Expandir Personajes">▾</button>
             <ul>
               <li><a href="#harry">Harry Potter</a></li>
               <li><a href="#ron">Ronald Weasley</a></li>
@@ -600,6 +603,7 @@
       </div>
     </div>
     <script src="./js/tema.js"></script>
+    <script src="./js/nav.js"></script>
     <script src="./js/quiz.js"></script>
     <script src="./js/hechizos.js"></script>
     <script src="./js/personajes.js"></script>
